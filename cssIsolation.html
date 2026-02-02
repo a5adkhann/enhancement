@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>CSS Isolation</title>
+        <style>
+        /* .card:has(p) {
+            color: white;
+        }
+
+        .widget h3 {
+        color: darkblue;
+        }
+
+        h3 {
+            color: red;
+        } */
+         .container {
+            display: flex;
+            gap: 10px;
+         }
+         p{
+            color: red;
+         }
+
+    </style>
+    </head>
+    <body>
+
+        <!-- <div class="card">
+            <p>Card Para</p>
+        </div>
+
+        <p>Global Para</p>
+
+        <div class="widget">
+            <h3>Widget Title</h3>
+            <p>Widget content</p>
+        </div>
+
+        <h3>Widget Title</h3>
+        <p>Widget content</p> -->
+
+
+        <div class="container">
+            <p>Asad</p>
+            <p>Khan</p>
+            <p>Apexion</p>
+        </div>
+
+        <div id="extra">
+        </div>
+
+        <script>
+            const extra = document.getElementById("extra");
+            const shadow = extra.attachShadow({mode: "open"});
+            shadow.innerHTML = `
+                <p>Asad Khan Extra Heading</p> 
+            `;
+        </script>
+
+    </body>
+</html>
